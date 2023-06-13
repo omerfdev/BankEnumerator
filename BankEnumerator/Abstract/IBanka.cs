@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankEnumerator
 {
-    internal interface IBanka
+    public interface IBanka
     {
         //Gişeler,Kuyruk,Numaratör,Sayac,MesaiBaslar(gisesayisi),MesaiBitir
 

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace BankEnumerator.Concrete
 {
-    internal class Banka : IBanka
+    public class Banka : IBanka
     {
         public delegate void HaberTipi(object sender);
 
-        //todo:1.)Delegate tanımlanır.public delegate void HaberTipi(object sender)
+        //todo:1.)Delegate tanımlanır.public delegate void HaberTipi(object sender) 2.)Event tanımlanır EventHaberTipi
         public Banka()
         {
             Giseler=new List<IGise>();
