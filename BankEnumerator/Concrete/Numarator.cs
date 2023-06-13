@@ -1,5 +1,6 @@
 ﻿using BankEnumerator.Abstract;
 using BankEnumerator.Concrete;
+using System.Diagnostics.Eventing.Reader;
 
 namespace BankEnumerator
 {
@@ -8,40 +9,60 @@ namespace BankEnumerator
         public Numarator()
         {
             BireyselSiraSayaci = 1000;
-            GiseSiraSayaci= 2000;
+            GiseSiraSayaci = 2000;
             VipSiraSayacı = 3000;
         }
-        public int VipSiraSayacı { get ; set; }
-        public int BireyselSiraSayaci { get ; set ; }
+        public int VipSiraSayacı { get; set; }
+        public int BireyselSiraSayaci { get; set; }
         public int GiseSiraSayaci { get; set; }
 
         public event Banka.NumaraHaberTipi NumaraUrettim;
 
         public void NumaraÜret(object sender)
         {
-            if (Banka.MesaiMi==true)
+            if (Banka.MesaiMi == true)
             {
-                IMusteri musteri=sender as IMusteri;
-               bool Vipmi= Banka.DBMusteri.VipMi(musteri.TC);
+                IMusteri musteri = sender as IMusteri;
+                bool Vipmi = Banka.DBMusteri.VipMi(musteri.TC);
                 INumara numara = null;
-                if (Vipmi) 
+                if (Vipmi)
                 {
                     numara = new VipNumarasi();
                     numara.SıraNumarası = VipSiraSayacı;
                     numara.IslemTarih = DateTime.Now;
                     numara.OnundeKacKisiVar = numara.SıraNumarası - 3000;//Düzeltilecek
-                    VipSiraSayacı++;    
+                    VipSiraSayacı++;
                 }
-                else if(musteri.IslemTipi==IslemTipi.Bireysel) 
+                else if (musteri.IslemTipi == IslemTipi.Bireysel)
                 {
                     numara = new BireyselNumara();
                     numara.SıraNumarası = BireyselSiraSayaci;
-                    numara.IslemTarih= DateTime.Now;
+                    numara.IslemTarih = DateTime.Now;
                     numara.OnundeKacKisiVar = numara.SıraNumarası - 1000;//Düzeltilecek
                     BireyselSiraSayaci++;
-                
+
                 }
-            } 
+                else if (musteri.IslemTipi == IslemTipi.Gise)
+                {
+                    numara = new GiseNumarasi();
+                    numara.SıraNumarası = GiseSiraSayaci;
+                    numara.IslemTarih = DateTime.Now;
+                    numara.OnundeKacKisiVar = numara.SıraNumarası - 2000;//Düzeltilecek
+                    GiseSiraSayaci++;
+
+                }
+                else
+                {
+                    //HATA
+                }
+
+                musteri.Numara = numara;
+                NumaraUrettim(numara);
+               
+
+
+                    
+            }
         }
     }
 }
