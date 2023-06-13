@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BankEnumerator.Abstract
 {
-    internal interface IMusteriDatabaseYöneticisi
+    public interface IMusteriDatabaseYöneticisi
     {
+        bool VipMi(string TC);
     }
 }

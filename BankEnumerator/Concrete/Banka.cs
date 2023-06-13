@@ -10,8 +10,8 @@ namespace BankEnumerator.Concrete
     public class Banka : IBanka
     {
         public delegate void HaberTipi(object sender);
-
-        //todo:1.)Delegate tanımlanır.public delegate void HaberTipi(object sender) 2.)Event tanımlanır EventHaberTipi
+        public delegate void NumaraHaberTipi(INumara numara);
+        //todo:1.)Delegate tanımlanır.public delegate void HaberTipi(object sender) 2.)Event tanımlanır EventHaberTipi        3.)Event i metoda Bağla
         public Banka()
         {
             Giseler=new List<IGise>();
@@ -21,7 +21,7 @@ namespace BankEnumerator.Concrete
         public IKuyruk Kuyruk { get ; set ; }
         public INumarator Numarator { get; set ; }
         public ISayac Sayac { get ; set ; }
-        public bool MesaiMi { get; set ; }
+        public static bool MesaiMi { get; set ; }
         public static IMusteriDatabaseYöneticisi DBMusteri = new Database();
         public void MesaiBaslat(int giseSayisi)
         {

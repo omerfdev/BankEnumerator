@@ -1,8 +1,8 @@
 ﻿using System.Globalization;
 
-namespace BankEnumerator
+namespace BankEnumerator.Abstract
 {
-    public class INumara
+    public interface INumara
     {
         public int SıraNumarası { get; set; }
         public DateTime IslemTarih { get; set; }
