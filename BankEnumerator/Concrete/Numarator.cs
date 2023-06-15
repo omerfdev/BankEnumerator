@@ -20,7 +20,7 @@ namespace BankEnumerator
 
         public void NumaraÜret(object sender)
         {
-            if (Banka.MesaiMi == true)
+            if (Banka.IsWorking == true)
             {
                 IMusteri musteri = sender as IMusteri;
                 bool Vipmi = Banka.DBMusteri.VipMi(musteri.TC);

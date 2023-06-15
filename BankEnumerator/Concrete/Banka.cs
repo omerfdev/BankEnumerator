@@ -15,13 +15,13 @@ namespace BankEnumerator.Concrete
         public Banka()
         {
             Giseler=new List<IGise>();
-            MesaiMi = false;
+            IsWorking = false;
         }
         public List<IGise> Giseler { get ; set; }
         public IKuyruk Kuyruk { get ; set ; }
         public INumarator Numarator { get; set ; }
         public ISayac Sayac { get ; set ; }
-        public static bool MesaiMi { get; set ; }
+        public static bool IsWorking { get; set ; }
         public static IMusteriDatabaseYöneticisi DBMusteri = new Database();
         /// <summary>
         /// Bu metod bankadaki gişelerin mesaisini başlatır.
@@ -41,7 +41,7 @@ namespace BankEnumerator.Concrete
                 Giseler.Add(gise);
 
             }
-            MesaiMi=true;
+            IsWorking=true;
         }
         /// <summary>
         /// Mesai bitir metodu...

@@ -57,18 +57,18 @@
             grpBoxEnumarator.Controls.Add(lblIdentity);
             grpBoxEnumarator.Location = new Point(12, 91);
             grpBoxEnumarator.Name = "grpBoxEnumarator";
-            grpBoxEnumarator.Size = new Size(279, 161);
+            grpBoxEnumarator.Size = new Size(279, 185);
             grpBoxEnumarator.TabIndex = 1;
             grpBoxEnumarator.TabStop = false;
-            grpBoxEnumarator.Text = "Numaratör";
+            grpBoxEnumarator.Text = "Enumarator";
             // 
             // btnMusteri
             // 
-            btnMusteri.Location = new Point(179, 114);
+            btnMusteri.Location = new Point(82, 100);
             btnMusteri.Name = "btnMusteri";
-            btnMusteri.Size = new Size(94, 29);
+            btnMusteri.Size = new Size(191, 55);
             btnMusteri.TabIndex = 3;
-            btnMusteri.Text = "Sıra Al";
+            btnMusteri.Text = "Take Number";
             btnMusteri.UseVisualStyleBackColor = true;
             btnMusteri.Click += btnMusteri_Click;
             // 

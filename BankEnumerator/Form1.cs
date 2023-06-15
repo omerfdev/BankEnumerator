@@ -26,14 +26,14 @@ namespace BankEnumerator
 
         private void btnMusteri_Click(object sender, EventArgs e)
         {
-            IMusteri musteri=new Musteri();
+            IMusteri musteri = new Musteri();
             musteri.IslemTipi = (IslemTipi)cmbBoxIslem.SelectedItem;
-            musteri.TC=txtBoxTurkishID.Text;
+            musteri.TC = txtBoxTurkishID.Text;
             musteri.NumaratorBenGeldim += banka.Numarator.NumaraÜret;
             //numaratör ben geldim eventi tetiklendiğinde numaratör içerisindeki numara üret metodu çağrılacak.
-            foreach (var item in banka.Giseler)
+            foreach (var gise in banka.Giseler)
             {
-              //musteri.GiseBenGeldim+=gise.Kontrol;
+                musteri.GiseBenGeldim+=gise.Kontrol;
             }
             musteri.SıraNumarasıAl();
         }

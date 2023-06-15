@@ -23,7 +23,10 @@ namespace BankEnumerator
         }
         public void NumaratörüKontrolEt(INumara numara)
         {
-            
+            if (numara==Numara)
+            {
+                GiseBenGeldim(this);
+            }
         }
     }
 }
