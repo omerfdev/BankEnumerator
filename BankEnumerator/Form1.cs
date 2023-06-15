@@ -37,6 +37,16 @@ namespace BankEnumerator
             }
             musteri.SıraNumarasıAl();
             banka.Kuyruk.NumaraAtadim += musteri.NumaratörüKontrolEt;
+            ListeleriYukle();
+        }
+
+        private void ListeleriYukle()
+        {
+            foreach (ListBox item in this.Controls) { item.DataSource = null; }
+            lstBoxBireysel.DataSource = banka.Kuyruk.VipNumaraListesi;
+            lstBoxGise.DataSource = banka.Kuyruk.GiseNumaraListesi;
+            lstBoxBireysel.DataSource = banka.Kuyruk.BireyselNumaraListesi;
+            
         }
     }
 }
