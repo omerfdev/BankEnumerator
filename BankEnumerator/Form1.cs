@@ -36,6 +36,7 @@ namespace BankEnumerator
                 musteri.GiseBenGeldim+=gise.Kontrol;
             }
             musteri.SıraNumarasıAl();
+            banka.Kuyruk.NumaraAtadim += musteri.NumaratörüKontrolEt;
         }
     }
 }

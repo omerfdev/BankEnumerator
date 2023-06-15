@@ -37,10 +37,12 @@ namespace BankEnumerator.Concrete
             for (int i = 0; i < giseSayisi; i++)
             {
                 IGise gise=new Gise();
+                gise.KuyrukBenMusaitim += Kuyruk.GiseyeNumaraGonder;
                 //TODO:KUYRUKBENMÜSAİTİM, SAYAC BENİM İŞİM BİTTİ..
                 Giseler.Add(gise);
 
             }
+            Numarator.NumaraUrettim += Kuyruk.NumaratordenNumaraAl;
             IsWorking=true;
         }
         /// <summary>
