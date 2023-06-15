@@ -11,7 +11,7 @@ namespace BankEnumerator.Concrete
     {
         public delegate void HaberTipi(object sender);
         public delegate void NumaraHaberTipi(INumara numara);
-        //todo:1.)Delegate tanımlanır.public delegate void HaberTipi(object sender) 2.)Event tanımlanır EventHaberTipi        3.)Event i metoda Bağla
+        //todo:1.)Delegate tanımlanır.public delegate void HaberTipi(object sender) 2.)Event tanımlanır EventHaberTipi        3.)Event i metoda Bağla=musteri.NumaratörBenGeldim+=Banka.numaratör.Numarauret;
         public Banka()
         {
             Giseler=new List<IGise>();
@@ -23,6 +23,11 @@ namespace BankEnumerator.Concrete
         public ISayac Sayac { get ; set ; }
         public static bool MesaiMi { get; set ; }
         public static IMusteriDatabaseYöneticisi DBMusteri = new Database();
+        /// <summary>
+        /// Bu metod bankadaki gişelerin mesaisini başlatır.
+        /// </summary>
+        /// <param name="giseSayisi"></param>
+        /// <exception cref="Exception"></exception>
         public void MesaiBaslat(int giseSayisi)
         {
             Kuyruk=new Kuyruk();
@@ -38,7 +43,10 @@ namespace BankEnumerator.Concrete
             }
             MesaiMi=true;
         }
-
+        /// <summary>
+        /// Mesai bitir metodu...
+        /// </summary>
+        /// <exception cref="NotImplementedException"></exception>
         public void MesaiBitir()
         {
             throw new NotImplementedException();

@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             btnCreateBank = new Button();
-            groupBox1 = new GroupBox();
+            grpBoxEnumarator = new GroupBox();
+            btnMusteri = new Button();
+            cmbBoxIslem = new ComboBox();
+            txtBoxTurkishID = new TextBox();
             lblIdentity = new Label();
-            textBox1 = new TextBox();
-            groupBox1.SuspendLayout();
+            grpBoxEnumarator.SuspendLayout();
             SuspendLayout();
             // 
             // btnCreateBank
@@ -45,17 +47,45 @@
             btnCreateBank.TabIndex = 0;
             btnCreateBank.Text = "Create Bank";
             btnCreateBank.UseVisualStyleBackColor = false;
+            btnCreateBank.Click += btnCreateBank_Click;
             // 
-            // groupBox1
+            // grpBoxEnumarator
             // 
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(lblIdentity);
-            groupBox1.Location = new Point(12, 91);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(279, 233);
-            groupBox1.TabIndex = 1;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
+            grpBoxEnumarator.Controls.Add(btnMusteri);
+            grpBoxEnumarator.Controls.Add(cmbBoxIslem);
+            grpBoxEnumarator.Controls.Add(txtBoxTurkishID);
+            grpBoxEnumarator.Controls.Add(lblIdentity);
+            grpBoxEnumarator.Location = new Point(12, 91);
+            grpBoxEnumarator.Name = "grpBoxEnumarator";
+            grpBoxEnumarator.Size = new Size(279, 161);
+            grpBoxEnumarator.TabIndex = 1;
+            grpBoxEnumarator.TabStop = false;
+            grpBoxEnumarator.Text = "Numaratör";
+            // 
+            // btnMusteri
+            // 
+            btnMusteri.Location = new Point(179, 114);
+            btnMusteri.Name = "btnMusteri";
+            btnMusteri.Size = new Size(94, 29);
+            btnMusteri.TabIndex = 3;
+            btnMusteri.Text = "Sıra Al";
+            btnMusteri.UseVisualStyleBackColor = true;
+            btnMusteri.Click += btnMusteri_Click;
+            // 
+            // cmbBoxIslem
+            // 
+            cmbBoxIslem.FormattingEnabled = true;
+            cmbBoxIslem.Location = new Point(82, 66);
+            cmbBoxIslem.Name = "cmbBoxIslem";
+            cmbBoxIslem.Size = new Size(191, 28);
+            cmbBoxIslem.TabIndex = 2;
+            // 
+            // txtBoxTurkishID
+            // 
+            txtBoxTurkishID.Location = new Point(82, 33);
+            txtBoxTurkishID.Name = "txtBoxTurkishID";
+            txtBoxTurkishID.Size = new Size(191, 27);
+            txtBoxTurkishID.TabIndex = 1;
             // 
             // lblIdentity
             // 
@@ -66,33 +96,28 @@
             lblIdentity.TabIndex = 0;
             lblIdentity.Text = "TurkishID";
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(82, 33);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(191, 27);
-            textBox1.TabIndex = 1;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(782, 453);
-            Controls.Add(groupBox1);
+            Controls.Add(grpBoxEnumarator);
             Controls.Add(btnCreateBank);
             Name = "Form1";
             Text = "Bank Enumerator";
             Load += Form1_Load;
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            grpBoxEnumarator.ResumeLayout(false);
+            grpBoxEnumarator.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Button btnCreateBank;
-        private GroupBox groupBox1;
-        private TextBox textBox1;
+        private GroupBox grpBoxEnumarator;
+        private TextBox txtBoxTurkishID;
         private Label lblIdentity;
+        private Button btnMusteri;
+        private ComboBox cmbBoxIslem;
     }
 }

@@ -21,7 +21,7 @@ namespace BankEnumerator.Abstract
         {
             if (TC!=null)
             {
-                NumaratorBenGeldim(this);
+                //NumaratorBenGeldim(this);
             }
         
         
