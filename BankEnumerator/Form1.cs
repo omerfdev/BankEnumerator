@@ -33,7 +33,7 @@ namespace BankEnumerator
             //numaratör ben geldim eventi tetiklendiğinde numaratör içerisindeki numara üret metodu çağrılacak.
             foreach (var gise in banka.Giseler)
             {
-                musteri.GiseBenGeldim+=gise.Kontrol;
+                musteri.GiseBenGeldim += gise.Kontrol;
             }
             musteri.SıraNumarasıAl();
             banka.Kuyruk.NumaraAtadim += musteri.NumaratörüKontrolEt;

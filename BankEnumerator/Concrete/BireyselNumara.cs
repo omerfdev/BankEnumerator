@@ -12,5 +12,10 @@ namespace BankEnumerator.Concrete
         public int SıraNumarası { get; set; }
         public DateTime IslemTarih { get; set; }
         public int OnundeKacKisiVar { get; set; }
+
+        public override string ToString()
+        {
+            return $"{SıraNumarası}-- {IslemTarih}--{OnundeKacKisiVar}";
+        }
     }
 }

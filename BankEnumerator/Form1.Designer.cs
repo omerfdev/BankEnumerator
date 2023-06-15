@@ -34,6 +34,9 @@
             cmbBoxIslem = new ComboBox();
             txtBoxTurkishID = new TextBox();
             lblIdentity = new Label();
+            lstBoxVip = new ListBox();
+            lstBoxBireysel = new ListBox();
+            lstBoxGise = new ListBox();
             grpBoxEnumarator.SuspendLayout();
             SuspendLayout();
             // 
@@ -96,11 +99,41 @@
             lblIdentity.TabIndex = 0;
             lblIdentity.Text = "TurkishID";
             // 
+            // lstBoxVip
+            // 
+            lstBoxVip.FormattingEnabled = true;
+            lstBoxVip.ItemHeight = 20;
+            lstBoxVip.Location = new Point(12, 282);
+            lstBoxVip.Name = "lstBoxVip";
+            lstBoxVip.Size = new Size(279, 164);
+            lstBoxVip.TabIndex = 2;
+            // 
+            // lstBoxBireysel
+            // 
+            lstBoxBireysel.FormattingEnabled = true;
+            lstBoxBireysel.ItemHeight = 20;
+            lstBoxBireysel.Location = new Point(297, 282);
+            lstBoxBireysel.Name = "lstBoxBireysel";
+            lstBoxBireysel.Size = new Size(279, 164);
+            lstBoxBireysel.TabIndex = 3;
+            // 
+            // lstBoxGise
+            // 
+            lstBoxGise.FormattingEnabled = true;
+            lstBoxGise.ItemHeight = 20;
+            lstBoxGise.Location = new Point(582, 282);
+            lstBoxGise.Name = "lstBoxGise";
+            lstBoxGise.Size = new Size(279, 164);
+            lstBoxGise.TabIndex = 4;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(782, 453);
+            ClientSize = new Size(948, 453);
+            Controls.Add(lstBoxGise);
+            Controls.Add(lstBoxBireysel);
+            Controls.Add(lstBoxVip);
             Controls.Add(grpBoxEnumarator);
             Controls.Add(btnCreateBank);
             Name = "Form1";
@@ -119,5 +152,8 @@
         private Label lblIdentity;
         private Button btnMusteri;
         private ComboBox cmbBoxIslem;
+        private ListBox lstBoxVip;
+        private ListBox lstBoxBireysel;
+        private ListBox lstBoxGise;
     }
 }
