@@ -29,14 +29,14 @@ namespace BankEnumerator
             musteri.IslemTipi = (IslemTipi)cmbBoxIslem.SelectedItem;
             musteri.TC = txtBoxTurkishID.Text;
             musteri.NumaratorBenGeldim += banka.Numarator.NumaraUret;
-        
+
             foreach (var gise in banka.Giseler)
             {
                 musteri.GiseBenGeldim += gise.Kontrol;
             }
             musteri.SıraNumarasıAl();
             banka.Kuyruk.NumaraAtadim += musteri.NumaratoruKontrolEt;
-            
+
             ListeleriYukle();
         }
 

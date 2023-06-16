@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             btnCreateBank = new Button();
             grpBoxEnumarator = new GroupBox();
             btnMusteri = new Button();
@@ -136,6 +137,7 @@
             Controls.Add(lstBoxVip);
             Controls.Add(grpBoxEnumarator);
             Controls.Add(btnCreateBank);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "Bank Enumerator";
             Load += Form1_Load;
