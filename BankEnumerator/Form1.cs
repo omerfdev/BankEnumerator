@@ -35,7 +35,7 @@ namespace BankEnumerator
                 musteri.GiseBenGeldim += gise.Kontrol;
             }
             musteri.SıraNumarasıAl();
-            banka.Kuyruk.NumaraAtadim += musteri.NumaratörüKontrolEt;
+            banka.Kuyruk.NumaraAtadim += musteri.NumaratoruKontrolEt;
             
             ListeleriYukle();
         }
@@ -53,7 +53,7 @@ namespace BankEnumerator
             lstBoxBireysel.DataSource = null;
             lstBoxGise.DataSource = null;
             lstBoxVip.DataSource = null;
-            lstBoxBireysel.DataSource = banka.Kuyruk.VipNumaraListesi;
+            lstBoxVip.DataSource = banka.Kuyruk.VipNumaraListesi;
             lstBoxGise.DataSource = banka.Kuyruk.GiseNumaraListesi;
             lstBoxBireysel.DataSource = banka.Kuyruk.BireyselNumaraListesi;
 

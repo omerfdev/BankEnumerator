@@ -18,13 +18,11 @@ namespace BankEnumerator
         public int BireyselSiraSayaci { get; set; }
         public int GiseSiraSayaci { get; set; }
 
-        public event  NumaraHaberTipi NumaraUrettim;
-
-       
+        public event  NumaraHaberTipi NumaraUrettim;      
 
         public void NumaraUret(object sender)
         {
-            if (Banka.IsWorking == true)
+            if (Banka.IsWorking )
             {
                 IMusteri musteri = sender as IMusteri;
                 bool Vipmi = Banka.DBMusteri.VipMi(musteri.TC);
@@ -33,7 +31,7 @@ namespace BankEnumerator
                 {
                     numara = new VipNumarasi();
                     numara.SıraNumarası = VipSiraSayacı;
-                    //numara.IslemTarih = DateTime.Now;
+                    numara.IslemTarih = DateTime.Now;
                     //numara.OnundeKacKisiVar = numara.SıraNumarası - 3000;//Düzeltilecek
                     VipSiraSayacı++;
                 }
@@ -41,7 +39,7 @@ namespace BankEnumerator
                 {
                     numara = new BireyselNumara();
                     numara.SıraNumarası = BireyselSiraSayaci;
-                    //numara.IslemTarih = DateTime.Now;
+                    numara.IslemTarih = DateTime.Now;
                     //numara.OnundeKacKisiVar = numara.SıraNumarası - 1000;//Düzeltilecek
                     BireyselSiraSayaci++;
 
@@ -50,7 +48,7 @@ namespace BankEnumerator
                 {
                     numara = new GiseNumarasi();
                     numara.SıraNumarası = GiseSiraSayaci;
-                    //numara.IslemTarih = DateTime.Now;
+                    numara.IslemTarih = DateTime.Now;
                     //numara.OnundeKacKisiVar = numara.SıraNumarası - 2000;//Düzeltilecek
                     GiseSiraSayaci++;
 

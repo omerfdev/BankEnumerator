@@ -26,7 +26,7 @@ namespace BankEnumerator
         public void GiseyeNumaraGonder(object sender)
         {
             IGise gise = sender as Gise;
-            if (VipNumaraListesi.Count > 0)
+            if (VipNumaraListesi.Count >0)
             {
                 gise.islemYapilanNumara = VipNumaraListesi[0];
                 VipNumaraListesi.RemoveAt(0);
@@ -44,7 +44,10 @@ namespace BankEnumerator
                 BireyselNumaraListesi.RemoveAt(0);
                 sayac = 0;
             }
-            else { MessageBox.Show("Bekleyen Müşteri Yoktur..");}
+            else
+            {
+                MessageBox.Show("Bekleyen Müşteri Yoktur..");
+            }
             NumaraAtadim(gise.islemYapilanNumara);
         }
 

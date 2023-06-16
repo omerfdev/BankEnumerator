@@ -14,7 +14,7 @@ namespace BankEnumerator
 
       
 
-        public void NumaratörüKontrolEt(INumara numara)
+        public void NumaratoruKontrolEt(INumara numara)
         {
             if (numara == Numara)
             {

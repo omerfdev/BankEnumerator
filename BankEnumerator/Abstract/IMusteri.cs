@@ -20,6 +20,6 @@ namespace BankEnumerator.Abstract
         
 
        
-        public void NumaratörüKontrolEt(INumara numara);
+        public void NumaratoruKontrolEt(INumara numara);
     }
 }
