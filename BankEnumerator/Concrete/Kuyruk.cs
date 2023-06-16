@@ -5,7 +5,7 @@ namespace BankEnumerator
 {
     public class Kuyruk : IKuyruk
     {
-        public event NumaraHaberTipi NumaraAtadim;
+       
         public Kuyruk()
         {
             VipNumaraListesi = new List<INumara>();
@@ -21,7 +21,7 @@ namespace BankEnumerator
         public List<INumara> GiseNumaraListesi { get; set; }
         public int sayac { get; set; }
 
-       
+        public event NumaraHaberTipi NumaraAtadim;
 
         public void GiseyeNumaraGonder(object sender)
         {
@@ -31,11 +31,11 @@ namespace BankEnumerator
                 gise.islemYapilanNumara = VipNumaraListesi[0];
                 VipNumaraListesi.RemoveAt(0);
             }
-            else if ((GiseNumaraListesi.Count>0 && sayac<3) || BireyselNumaraListesi.Count>=1)
+            else if ((GiseNumaraListesi.Count>0 && sayac<3) || BireyselNumaraListesi.Count==0)
             {
                 gise.islemYapilanNumara = GiseNumaraListesi[0];
                 GiseNumaraListesi.RemoveAt(0);
-                sayac ++; //sayac++;
+                sayac ++;
               
             }
             else if (BireyselNumaraListesi.Count > 0)

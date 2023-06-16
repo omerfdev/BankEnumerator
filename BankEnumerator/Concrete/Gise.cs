@@ -5,29 +5,26 @@ namespace BankEnumerator
 {
     public class Gise : IGise
     {
-        public INumara islemYapilanNumara { get ; set ; }
+        public INumara islemYapilanNumara { get; set; }
 
-       public event HaberTipi KuyrukBenMusaitim;
-         public event NumaraHaberTipi SayacIsımBıttı;
-
-        
-
+        public event HaberTipi KuyrukBenMusaitim;
+        public event NumaraHaberTipi SayacIsımBıttı;
 
         public void Kontrol(object sender)
         {
-           IMusteri musteri = sender as IMusteri;
-            if (musteri.Numara == islemYapilanNumara) 
+            IMusteri musteri = sender as IMusteri;
+            if (musteri.Numara == islemYapilanNumara)
             {
 
-                İslemYap();
+                IslemYap();
 
 
             }
         }
 
-        public void İslemYap()
+        public void IslemYap()
         {
-          
+
             SayacIsımBıttı(islemYapilanNumara);
             KuyrukBenMusaitim(this);
         }

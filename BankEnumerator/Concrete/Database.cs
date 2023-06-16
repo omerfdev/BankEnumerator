@@ -11,7 +11,7 @@ namespace BankEnumerator.Concrete
     {
         public Database()
         {
-            MusteriTCleri = new List<string> { "1111", "2222","3333","4444","5555"};
+            MusteriTCleri = new List<string>() { "1111", "2222","3333","4444","5555"};
         }
         public List<string> MusteriTCleri { get; set; }
         public bool VipMi(string TC)

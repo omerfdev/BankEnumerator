@@ -10,7 +10,7 @@ namespace BankEnumerator
         event HaberTipi KuyrukBenMusaitim;
         event NumaraHaberTipi SayacIsımBıttı;
         INumara islemYapilanNumara { get; set; }
-        void İslemYap();
+        void IslemYap();
         void Kontrol(object sender);
 
     }
