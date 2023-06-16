@@ -17,9 +17,9 @@ namespace BankEnumerator
 
         public void GisedenIsıBıtenNumarayıAl(INumara numara)
         {
-            if (numara is VipNumarasi) { VipMusteriSayisi -= -1; }
-            else if (numara is GiseNumarasi) { GiseMusteriSayisi -= -1; }
-            else if (numara is BireyselNumara) { BireyselMusteriSayisi -= -1; }
+            if (numara is VipNumarasi) { VipMusteriSayisi ++; }
+            else if (numara is GiseNumarasi) { GiseMusteriSayisi ++; }
+            else if (numara is BireyselNumara) { BireyselMusteriSayisi++; }
         }
     }
 }

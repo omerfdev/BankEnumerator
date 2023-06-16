@@ -10,24 +10,16 @@ namespace BankEnumerator.Abstract
 {
     public interface IMusteri
     {
-        //NumaratörBenGeldim
-        //GiseBenGeldim
-       public event HaberTipi NumaratorBenGeldim;//Numaratör ben geldim eventini haber tipi isimli delege temsil ediyor.
-       public event HaberTipi GiseBenGeldim;//Bağlama yapılmadı.Nesne oluşunca bağlıyacağım.
+       
+        event HaberTipi NumaratorBenGeldim;
+       event HaberTipi GiseBenGeldim;
         public  string TC { get; set; }
         IslemTipi IslemTipi { get; set; }
         INumara Numara { get; set; }
-       void SıraNumarasıAl() 
-        {
-            if (TC!=null)
-            {
-                //NumaratorBenGeldim(this);
-            }
+        public void SıraNumarasıAl();
         
-        
-        }
 
        
-        void NumaratörüKontrolEt(INumara numara);
+        public void NumaratörüKontrolEt(INumara numara);
     }
 }

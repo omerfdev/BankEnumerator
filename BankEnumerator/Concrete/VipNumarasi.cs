@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace BankEnumerator.Concrete
 {
-    internal class VipNumarasi : INumara
+    public class VipNumarasi : INumara
     {
         public int SıraNumarası { get ; set; }
         public DateTime IslemTarih { get ; set ; }
         public int OnundeKacKisiVar { get; set; }
         public override string ToString()
         {
-            return $"{SıraNumarası}-- {IslemTarih}--{OnundeKacKisiVar}";
+            return SıraNumarası.ToString();
         }
     }
 }

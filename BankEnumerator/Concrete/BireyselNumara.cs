@@ -15,7 +15,7 @@ namespace BankEnumerator.Concrete
 
         public override string ToString()
         {
-            return $"{SıraNumarası}-- {IslemTarih}--{OnundeKacKisiVar}";
+            return SıraNumarası.ToString();
         }
     }
 }

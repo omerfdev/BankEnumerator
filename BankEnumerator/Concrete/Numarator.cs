@@ -2,6 +2,8 @@
 using BankEnumerator.Concrete;
 using System.Diagnostics.Eventing.Reader;
 
+
+
 namespace BankEnumerator
 {
     public class Numarator : INumarator
@@ -16,9 +18,11 @@ namespace BankEnumerator
         public int BireyselSiraSayaci { get; set; }
         public int GiseSiraSayaci { get; set; }
 
-        public event Banka.NumaraHaberTipi NumaraUrettim;
+        public event  NumaraHaberTipi NumaraUrettim;
 
-        public void NumaraÜret(object sender)
+       
+
+        public void NumaraUret(object sender)
         {
             if (Banka.IsWorking == true)
             {
@@ -29,16 +33,16 @@ namespace BankEnumerator
                 {
                     numara = new VipNumarasi();
                     numara.SıraNumarası = VipSiraSayacı;
-                    numara.IslemTarih = DateTime.Now;
-                    numara.OnundeKacKisiVar = numara.SıraNumarası - 3000;//Düzeltilecek
+                    //numara.IslemTarih = DateTime.Now;
+                    //numara.OnundeKacKisiVar = numara.SıraNumarası - 3000;//Düzeltilecek
                     VipSiraSayacı++;
                 }
                 else if (musteri.IslemTipi == IslemTipi.Bireysel)
                 {
                     numara = new BireyselNumara();
                     numara.SıraNumarası = BireyselSiraSayaci;
-                    numara.IslemTarih = DateTime.Now;
-                    numara.OnundeKacKisiVar = numara.SıraNumarası - 1000;//Düzeltilecek
+                    //numara.IslemTarih = DateTime.Now;
+                    //numara.OnundeKacKisiVar = numara.SıraNumarası - 1000;//Düzeltilecek
                     BireyselSiraSayaci++;
 
                 }
@@ -46,23 +50,25 @@ namespace BankEnumerator
                 {
                     numara = new GiseNumarasi();
                     numara.SıraNumarası = GiseSiraSayaci;
-                    numara.IslemTarih = DateTime.Now;
-                    numara.OnundeKacKisiVar = numara.SıraNumarası - 2000;//Düzeltilecek
+                    //numara.IslemTarih = DateTime.Now;
+                    //numara.OnundeKacKisiVar = numara.SıraNumarası - 2000;//Düzeltilecek
                     GiseSiraSayaci++;
 
                 }
-                else
-                {
-                    //HATA
-                }
-
                 musteri.Numara = numara;
                 NumaraUrettim(numara);
+            }
+            else
+            {
+                //HATA
+            }
+
+                
                
 
 
                     
-            }
+            
         }
     }
 }

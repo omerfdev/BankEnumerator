@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace BankEnumerator.Concrete
 {
+    public delegate void HaberTipi(object sender);
+    public delegate void NumaraHaberTipi(INumara numara);
+
     public class Banka : IBanka
     {
-        public delegate void HaberTipi(object sender);
-        public delegate void NumaraHaberTipi(INumara numara);
-        //todo:1.)Delegate tanımlanır.public delegate void HaberTipi(object sender) 2.)Event tanımlanır EventHaberTipi        3.)Event i metoda Bağla=musteri.NumaratörBenGeldim+=Banka.numaratör.Numarauret;
+       
         public Banka()
         {
             Giseler = new List<IGise>();
@@ -22,7 +23,7 @@ namespace BankEnumerator.Concrete
         public INumarator Numarator { get; set; }
         public ISayac Sayac { get; set; }
         public static bool IsWorking { get; set; }
-        public static IMusteriDatabaseYöneticisi DBMusteri = new Database();
+        public static IMusteriDatabaseYoneticisi DBMusteri = new Database();
         /// <summary>
         /// Bu metod bankadaki gişelerin mesaisini başlatır.
         /// </summary>
@@ -34,14 +35,18 @@ namespace BankEnumerator.Concrete
             Sayac = new Sayac();
             Numarator = new Numarator();
             if (giseSayisi > 3) { throw new Exception("En fazla oluşturabilirsin..."); }
-            for (int i = 0; i < giseSayisi; i++)
+            else
             {
-                IGise gise = new Gise();
-                gise.KuyrukBenMusaitim += Kuyruk.GiseyeNumaraGonder;
-                gise.SayacIsımBıttı += Sayac.GisedenIsıBıtenNumarayıAl;
-                Giseler.Add(gise);
+                for (int i = 0; i < giseSayisi; i++)
+                {
+                    IGise gise = new Gise();
+                    gise.KuyrukBenMusaitim += Kuyruk.GiseyeNumaraGonder;
+                    gise.SayacIsımBıttı += Sayac.GisedenIsıBıtenNumarayıAl;
+                    Giseler.Add(gise);
 
+                }
             }
+            
             Numarator.NumaraUrettim += Kuyruk.NumaratordenNumaraAl;
             IsWorking = true;
         }

@@ -7,8 +7,11 @@ namespace BankEnumerator
     {
         public INumara islemYapilanNumara { get ; set ; }
 
-        public event Banka.HaberTipi KuyrukBenMusaitim;
-        public event Banka.NumaraHaberTipi SayacIsımBıttı;
+       public event HaberTipi KuyrukBenMusaitim;
+         public event NumaraHaberTipi SayacIsımBıttı;
+
+        
+
 
         public void Kontrol(object sender)
         {
@@ -16,15 +19,15 @@ namespace BankEnumerator
             if (musteri.Numara == islemYapilanNumara) 
             {
 
-                İslenYap();
+                İslemYap();
 
 
             }
         }
 
-        public void İslenYap()
+        public void İslemYap()
         {
-            //İşlemleri yaptı.
+          
             SayacIsımBıttı(islemYapilanNumara);
             KuyrukBenMusaitim(this);
         }

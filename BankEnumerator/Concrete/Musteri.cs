@@ -5,14 +5,25 @@ namespace BankEnumerator
 {
     public class Musteri : IMusteri
     {
-        public string TC { get ; set ; }
-        public IslemTipi IslemTipi { get ; set ; }
-        public INumara Numara { get ; set ; }
+        public string TC { get; set; }
+        public IslemTipi IslemTipi { get; set; }
+        public INumara Numara { get; set; }
 
-        public event Banka.HaberTipi NumaratorBenGeldim;
-        public event Banka.HaberTipi GiseBenGeldim;
+        public event HaberTipi NumaratorBenGeldim;
+        public event HaberTipi GiseBenGeldim;
 
-        void SıraNumarasıAl()
+      
+
+        public void NumaratörüKontrolEt(INumara numara)
+        {
+            if (numara == Numara)
+            {
+                GiseBenGeldim(this);
+            }
+        }
+
+
+        public void SıraNumarasıAl()
         {
             if (TC != null)
             {
@@ -20,13 +31,6 @@ namespace BankEnumerator
             }
 
 
-        }
-        public void NumaratörüKontrolEt(INumara numara)
-        {
-            if (numara==Numara)
-            {
-                GiseBenGeldim(this);
-            }
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BankEnumerator.Concrete
 {
-    public class Database : IMusteriDatabaseYöneticisi
+    public class Database : IMusteriDatabaseYoneticisi
     {
         public Database()
         {

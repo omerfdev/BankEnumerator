@@ -12,10 +12,9 @@ namespace BankEnumerator
         static IBanka banka;
         private void Form1_Load(object sender, EventArgs e)
         {
-            //Banka b = new Banka();
-            //b.Giseler.Add(new IGise );
-            cmbBoxIslem.Items.AddRange(Enum.GetNames(typeof(IslemTipi)));
-
+            cmbBoxIslem.Items.Add(IslemTipi.Bireysel);
+            cmbBoxIslem.Items.Add(IslemTipi.Gise);
+            //cmbBoxIslem.Items.AddRange(Enum.GetNames(typeof(IslemTipi)));
         }
 
         private void btnCreateBank_Click(object sender, EventArgs e)
@@ -29,24 +28,35 @@ namespace BankEnumerator
             IMusteri musteri = new Musteri();
             musteri.IslemTipi = (IslemTipi)cmbBoxIslem.SelectedItem;
             musteri.TC = txtBoxTurkishID.Text;
-            musteri.NumaratorBenGeldim += banka.Numarator.NumaraÜret;
-            //numaratör ben geldim eventi tetiklendiğinde numaratör içerisindeki numara üret metodu çağrılacak.
+            musteri.NumaratorBenGeldim += banka.Numarator.NumaraUret;
+        
             foreach (var gise in banka.Giseler)
             {
                 musteri.GiseBenGeldim += gise.Kontrol;
             }
             musteri.SıraNumarasıAl();
             banka.Kuyruk.NumaraAtadim += musteri.NumaratörüKontrolEt;
+            
             ListeleriYukle();
         }
 
         private void ListeleriYukle()
         {
-            foreach (ListBox item in this.Controls) { item.DataSource = null; }
+            //foreach (ListBox item in this.Controls)
+            //{
+            //    if (item is ListBox)
+            //    {
+            //        item.DataSource = null;
+            //    }
+            //}
+
+            lstBoxBireysel.DataSource = null;
+            lstBoxGise.DataSource = null;
+            lstBoxVip.DataSource = null;
             lstBoxBireysel.DataSource = banka.Kuyruk.VipNumaraListesi;
             lstBoxGise.DataSource = banka.Kuyruk.GiseNumaraListesi;
             lstBoxBireysel.DataSource = banka.Kuyruk.BireyselNumaraListesi;
-            
+
         }
     }
 }
