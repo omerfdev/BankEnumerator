@@ -58,5 +58,31 @@ namespace BankEnumerator
             lstBoxBireysel.DataSource = banka.Kuyruk.BireyselNumaraListesi;
 
         }
+
+        private void btnCreateHelpDesk_Click(object sender, EventArgs e)
+        {
+            GiseOlustur(banka.Giseler);
+        }
+
+        private void GiseOlustur(List<IGise> giseler)
+        {
+            for (int i = 0; i < giseler.Count; i++)
+            {
+                Button btn=new Button();
+                btn.Text = "Available";
+                btn.Width = 100;
+                btn.Height = 100;
+                btn.Click += new EventHandler(Available);
+                flowLayoutPanel1.Controls.Add(btn); 
+
+            
+            }
+
+        }
+
+        private void Available(object? sender,EventArgs e)
+        {
+            banka.Giseler[0].IslemYap();
+        }
     }
 }
