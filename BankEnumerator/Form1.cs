@@ -68,19 +68,19 @@ namespace BankEnumerator
         {
             for (int i = 0; i < giseler.Count; i++)
             {
-                Button btn=new Button();
+                Button btn = new Button();
                 btn.Text = "Available";
                 btn.Width = 100;
                 btn.Height = 100;
                 btn.Click += new EventHandler(Available);
-                flowLayoutPanel1.Controls.Add(btn); 
+                flwPanel.Controls.Add(btn);
 
-            
+
             }
 
         }
 
-        private void Available(object? sender,EventArgs e)
+        private void Available(object? sender, EventArgs e)
         {
             banka.Giseler[0].IslemYap();
         }

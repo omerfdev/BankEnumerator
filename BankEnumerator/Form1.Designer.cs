@@ -38,7 +38,7 @@
             lstBoxVip = new ListBox();
             lstBoxBireysel = new ListBox();
             lstBoxGise = new ListBox();
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            flwPanel = new FlowLayoutPanel();
             btnCreateHelpDesk = new Button();
             grpBoxEnumarator.SuspendLayout();
             SuspendLayout();
@@ -129,12 +129,12 @@
             lstBoxGise.Size = new Size(279, 164);
             lstBoxGise.TabIndex = 4;
             // 
-            // flowLayoutPanel1
+            // flwPanel
             // 
-            flowLayoutPanel1.Location = new Point(429, 12);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(432, 234);
-            flowLayoutPanel1.TabIndex = 5;
+            flwPanel.Location = new Point(429, 12);
+            flwPanel.Name = "flwPanel";
+            flwPanel.Size = new Size(432, 234);
+            flwPanel.TabIndex = 5;
             // 
             // btnCreateHelpDesk
             // 
@@ -152,7 +152,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(948, 453);
             Controls.Add(btnCreateHelpDesk);
-            Controls.Add(flowLayoutPanel1);
+            Controls.Add(flwPanel);
             Controls.Add(lstBoxGise);
             Controls.Add(lstBoxBireysel);
             Controls.Add(lstBoxVip);
@@ -178,7 +178,7 @@
         private ListBox lstBoxVip;
         private ListBox lstBoxBireysel;
         private ListBox lstBoxGise;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel flwPanel;
         private Button btnCreateHelpDesk;
     }
 }
